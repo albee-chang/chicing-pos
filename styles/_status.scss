@@ -1,0 +1,89 @@
+.checkMain {
+  min-height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding: 0rem 2rem;
+  
+}
+
+.footer {
+  // position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  .backBtn {
+    margin: 1rem 0rem;
+    text-decoration: none;
+    text-align: center;
+    background-color: #7e7e7e;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.7rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    &:hover {
+      background-color: #686868;
+      font-weight: bold;
+    }
+  }
+
+  .chargeBtn {
+    margin: 1rem 2rem;
+    text-decoration: none;
+    text-align: center;
+    background-color: #ffb92b;
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 0.7rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    &:hover {
+      background-color: #ffc23d;
+    }
+  }
+}
+
+.orderDetail {
+  background-color: #f0f0f0;
+  max-height: 60vh;
+  margin: 5rem 0rem 0rem 0rem;
+  padding: 1rem;
+  overflow-y: auto;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc; 
+}
+th,td {
+  text-align: center;
+  padding: 15px 0;
+  
+}
+
+th {
+  font-size: 1.25rem;
+  letter-spacing: 0.2rem;
+}
+
+tr {
+  border-bottom: 1px solid #B9B9B9;
+}
+
+

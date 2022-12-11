@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  font-family: sans-serif;
+}
+
+.admincontainer {
+  min-height: 50vh;
+  padding: 5rem 0rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .logInGrop {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #585858;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    font-size: bold;
+    input {
+      margin: 0.7rem 0rem;
+      padding: 0.5rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+  .logIn-btn {
+    text-decoration: none;
+    text-align: center;
+    background-color: #00895e;
+    color: white;
+    border: none;
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.7rem;
+    &:hover {
+      background-color: #ffb92b;
+      color: #005a3e;
+      font-weight: bold;
+    }
+  }
+}
