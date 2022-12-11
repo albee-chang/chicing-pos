@@ -19,7 +19,7 @@ init();
 //取得購物車資料
 function getCartList() {
   axios
-    .get("https://json-server-vercel-three.vercel.app/carts")
+    .get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/carts")
     .then(function (response) {
       console.log(response.data);
       cart = response.data;
