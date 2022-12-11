@@ -18,7 +18,7 @@ const userid = document.querySelector(".userid");
 const userpassword = document.querySelector(".userpassword");
 let userData=[];
 function getUserList(){
-  axios.get("https://json-server-vercel-three.vercel.app/users")
+  axios.get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/users")
   .then(function (response){
     console.log(response.data);
     userData = response.data;
@@ -37,7 +37,7 @@ changebtnUserId.addEventListener("click",function(e){
     userid.placeholder = userid.value;
     userid.value ="";
   }
-  axios.patch("https://json-server-vercel-three.vercel.app/users/1",
+  axios.patch("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/users/1",
     {
       "account": `${userid.placeholder}`   
     }).then(function(response){
@@ -55,7 +55,7 @@ changebtnUserId.addEventListener("click",function(e){
       userpassword.placeholder = userpassword.value;
       userpassword.value ="";
     }
-    axios.patch("https://json-server-vercel-three.vercel.app/users/1",
+    axios.patch("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/users/1",
       {
         "password": `${userpassword.placeholder}`   
       }).then(function(response){
@@ -94,7 +94,7 @@ const tab1 = document.querySelector("#tab1");
 const billContent = document.querySelector(".billContent");
 let billsContent=[];
 function getBillsList(){
-  axios.get("https://json-server-vercel-three.vercel.app/bills")
+  axios.get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/bills")
   .then(function(response){
     console.log(response.data);
 billsContent = response.data;
@@ -125,7 +125,7 @@ const tab2 = document.querySelector("#tab2");
 
 let allDish=[];
 function getAllDishList(){
-  axios.get("https://json-server-vercel-three.vercel.app/products").then(function (response) {
+  axios.get("hhttps://json-server-vercel-44aevuepx-albee-chang.vercel.app/products").then(function (response) {
     console.log(response.data);
     allDish=response.data;    
     allDish.forEach(item=>{
