@@ -16,7 +16,7 @@ document.querySelector(".tableId").innerHTML = tableId;
 //取得產品資料
 let allDish=[];
 function getAllDishList(){
-  axios.get("http://localhost:3000/products")
+  axios.get("https://json-server-vercel-three.vercel.app/products")
   .then(function (response) {
     allDish=response.data; 
     console.log(allDish);   
@@ -31,7 +31,7 @@ getAllDishList();
 let cart=[];
 function getCartList() {
   axios
-    .get(`http://localhost:3000/carts?tableId=${tableId}`)
+    .get(`https://json-server-vercel-three.vercel.app/carts?tableId=${tableId}`)
     .then(function (response) {
       cart = response.data;
       console.log(cart);
