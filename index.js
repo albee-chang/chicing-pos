@@ -12,7 +12,7 @@ let showTime = () => {
 };
 setInterval(showTime, 1000);
 let userData=[];
-axios.get("https://json-server-vercel-three.vercel.app/users/1")
+axios.get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/users/1")
 .then(function (response){
   console.log(response.data);
   userData = response.data;
