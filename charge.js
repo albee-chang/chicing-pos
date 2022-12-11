@@ -20,7 +20,7 @@ let cart = [];
 let total = 0;
 function getCartList() {
   axios
-    .get(`https://json-server-vercel-three.vercel.app/carts?tableId=${tableId}`)
+    .get(`https://json-server-vercel-44aevuepx-albee-chang.vercel.app/carts?tableId=${tableId}`)
     .then(function (response) {
       cart = response.data;
       console.log(cart);
@@ -107,7 +107,7 @@ function entry() {
 }
 function addBills() {
   axios
-    .post("https://json-server-vercel-three.vercel.app/bills", {
+    .post("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/bills", {
       tableId: tableId,
       total: money,
       time: `${new Date().getFullYear()}/${
@@ -127,7 +127,7 @@ function addBills() {
 let allCart = [];
 function getAllCartList() {
   axios
-    .get(`https://json-server-vercel-three.vercel.app/carts`)
+    .get(`https://json-server-vercel-44aevuepx-albee-chang.vercel.app/carts`)
     .then(function (response) {
       allCart = response.data;
       console.log(allCart);
@@ -148,7 +148,7 @@ function deleteCart() {
   console.log(cartIdRecord);
   cartIdRecord.forEach((item) => {
     axios
-      .delete(`https://json-server-vercel-three.vercel.app/carts/${item}`)
+      .delete(`https://json-server-vercel-44aevuepx-albee-chang.vercel.app/carts/${item}`)
       .then(function (response) {});
   });
 }
