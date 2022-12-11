@@ -125,8 +125,8 @@ const tab2 = document.querySelector("#tab2");
 
 let allDish=[];
 function getAllDishList(){
-  axios.get("hhttps://json-server-vercel-44aevuepx-albee-chang.vercel.app/products").then(function (response) {
-    console.log(response.data);
+  axios.get("hhttps://json-server-vercel-44aevuepx-albee-chang.vercel.app/products")
+    .then(function (response) {
     allDish=response.data;    
     allDish.forEach(item=>{
       if(item.category == "rice"){
@@ -138,8 +138,6 @@ function getAllDishList(){
       }else if(item.category == "drink"){
         item.category = "飲料";
       }
-    })
-    }).then(function(response){
       let str=`<tr>
 <th width="250px">項目</th>
 <th width="250px">分類</th>
