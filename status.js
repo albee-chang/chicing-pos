@@ -16,7 +16,7 @@ document.querySelector(".tableId").innerHTML = tableId;
 //取得產品資料
 let allDish=[];
 function getAllDishList(){
-  axios.get("https://json-server-vercel-three.vercel.app/products")
+  axios.get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/products")
   .then(function (response) {
     allDish=response.data; 
     console.log(allDish);   
@@ -31,7 +31,7 @@ getAllDishList();
 let cart=[];
 function getCartList() {
   axios
-    .get(`https://json-server-vercel-three.vercel.app/carts?tableId=${tableId}`)
+    .get(`https://json-server-vercel-44aevuepx-albee-chang.vercel.app/carts?tableId=${tableId}`)
     .then(function (response) {
       cart = response.data;
       console.log(cart);
