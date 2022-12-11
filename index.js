@@ -1,3 +1,4 @@
+const path = "https://json-server-vercel-three.vercel.app/";
 const account = document.querySelector(".account");
 const password = document.querySelector(".password");
 const login = document.querySelector(".logIn-btn");
@@ -11,19 +12,23 @@ let showTime = () => {
     .padStart(2, 0)}</li>`;
 };
 setInterval(showTime, 1000);
-let userData=[];
-axios.get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/users/1")
-.then(function (response){
-  console.log(response.data);
-  userData = response.data;
-})
-.catch(function(error){
-  console.log(error);
-})
+let userData = [];
+axios
+  .get(`${path}users/1`)
+  .then(function (response) {
+    console.log(response.data);
+    userData = response.data;
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 login.addEventListener("click", function (e) {
   if (account.value == "" || password.value == "") {
     return;
-  } else if (account.value == userData.account && password.value == userData.password) {
+  } else if (
+    account.value == userData.account &&
+    password.value == userData.password
+  ) {
     alert("登入成功");
     entry();
   } else {
@@ -36,5 +41,3 @@ login.addEventListener("click", function (e) {
 function entry() {
   window.location.href = "table.html";
 }
-
-

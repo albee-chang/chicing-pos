@@ -1,22 +1,24 @@
+const path = "https://json-server-vercel-three.vercel.app/";
 let dataRice = [];
 let dataSideDish = [];
 let dataSoup = [];
 let dataDrink = [];
-let allDish=[];
-function getAllDishList(){
-  axios.get("https://json-server-vercel-44aevuepx-albee-chang.vercel.app/products")
-  .then(function(response){
-      allDish=response.data;
+let allDish = [];
+function getAllDishList() {
+  axios
+    .get(`${path}products`)
+    .then(function (response) {
+      allDish = response.data;
       console.log(allDish);
-  }).catch(function(error){
-    console.log(error);
-  })
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 getAllDishList();
 
 //存放整理好的購物車資料格式
-let dataRecordList=[];
-
+let dataRecordList = [];
 
 //設定時間
 const currentTime = document.querySelector(".currentTime");
@@ -29,7 +31,6 @@ let showTime = () => {
 };
 setInterval(showTime, 1000);
 
-
 const dishMenuCard = document.querySelector(".dishMenuCard");
 //菜單tab
 const menu1 = document.querySelector(".menu1");
@@ -38,10 +39,10 @@ const menu3 = document.querySelector(".menu3");
 const menu4 = document.querySelector(".menu4");
 menu1.addEventListener("click", function (e) {
   let strRice = "";
-  allDish.forEach((item, index) =>{
-    if(item.category == "rice"){
+  allDish.forEach((item, index) => {
+    if (item.category == "rice") {
       dataRice.push(item);
-      
+
       strRice += `<li type="button" class="cardRice shadow-sm m-2 rounded" id="${index}">
       <img
         class="rounded img-fluid"
@@ -65,8 +66,8 @@ menu1.addEventListener("click", function (e) {
 });
 menu2.addEventListener("click", function (e) {
   let strSideDish = "";
-  allDish.forEach((item, index) =>{
-    if(item.category == "sideDish"){
+  allDish.forEach((item, index) => {
+    if (item.category == "sideDish") {
       dataSideDish.push(item);
       console.log(dataSideDish);
       strSideDish += `<li type="button" class="cardSideDish shadow-sm m-2 rounded" id="${index}">
@@ -91,8 +92,8 @@ menu2.addEventListener("click", function (e) {
 });
 menu3.addEventListener("click", function (e) {
   let strSoup = "";
-  allDish.forEach((item, index) =>{
-    if(item.category == "soup"){
+  allDish.forEach((item, index) => {
+    if (item.category == "soup") {
       dataSoup.push(item);
       console.log(dataSoup);
       strSoup += `<li type="button" class="cardSoup shadow-sm m-2 rounded" id="${index}">
@@ -117,8 +118,8 @@ menu3.addEventListener("click", function (e) {
 });
 menu4.addEventListener("click", function (e) {
   let strDrink = "";
-  allDish.forEach((item, index) =>{
-    if(item.category == "drink"){
+  allDish.forEach((item, index) => {
+    if (item.category == "drink") {
       dataDrink.push(item);
       console.log(dataDrink);
       strDrink += `<li type="button" class="cardDrink shadow-sm m-2 rounded" id="${index}">
@@ -197,9 +198,8 @@ function renderOrder(arrToRecord) {
   deleteBtn.forEach((e, index) => {
     e.addEventListener("click", function (e) {
       arrToRecord.splice(index, 1);
-      renderOrder(arrToRecord);      
+      renderOrder(arrToRecord);
     });
-    
   });
 }
 function totalRender(arrToRecord) {
@@ -209,28 +209,28 @@ function totalRender(arrToRecord) {
   });
   totalNum.innerHTML = `<p class="total">品項: ${arrToRecord.length} 項 總金額:${total}</p>`;
 }
-    
+
 sendBtn.addEventListener("click", function (e) {
   alert("訂單送出成功");
   sortCartList(arrToRecord);
   console.log(dataRecordList);
-  dataRecordList.forEach(item=>{
-    axios.post(`https://json-server-vercel-44aevuepx-albee-chang.vercel.app/carts?tableId=${table}`,{
-      tableId: item.tableId,
-productsId:item.productsId,
-quantity: item.quantity,
-price: item.price,
-time: item.time
-    })
-    .then(function(response){
-      console.log(response.data);
-      
-    }).catch(function(error){
-      console.log(error);
-    })
-  })
+  dataRecordList.forEach((item) => {
+    axios
+      .post(`${path}carts?tableId=${table}`, {
+        tableId: item.tableId,
+        productsId: item.productsId,
+        quantity: item.quantity,
+        price: item.price,
+        time: item.time,
+      })
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
   entry();
-  
 });
 function entry() {
   window.location.href = "table.html";
@@ -245,30 +245,29 @@ function entryCarts(tableId) {
   window.location.href = `status.html?desk=${tableId}`;
 }
 
-
-function sortCartList(arrToRecord){
-
-arrToRecord.forEach(item=>{
-  let obj={};
-obj.tableId = table;
-obj.productsId = fineProductsId(item);
-obj.quantity = item.num;
-obj.price = item.price;
-obj.time = `${new Date().getFullYear()}/${new Date().getMonth() + 1}/${new Date().getDate()} ${new Date().getHours()}:${new Date().getMinutes()
-  .toString()
-  .padStart(2, 0)}`;
-  dataRecordList.push(obj);
-})
-
-
+function sortCartList(arrToRecord) {
+  arrToRecord.forEach((item) => {
+    let obj = {};
+    obj.tableId = table;
+    obj.productsId = fineProductsId(item);
+    obj.quantity = item.num;
+    obj.price = item.price;
+    obj.time = `${new Date().getFullYear()}/${
+      new Date().getMonth() + 1
+    }/${new Date().getDate()} ${new Date().getHours()}:${new Date()
+      .getMinutes()
+      .toString()
+      .padStart(2, 0)}`;
+    dataRecordList.push(obj);
+  });
 }
-function fineProductsId(item){
+function fineProductsId(item) {
   let id;
-  allDish.find(e=>{
-    if(e.name == item.name){
+  allDish.find((e) => {
+    if (e.name == item.name) {
       console.log(e.id);
-      id =  e.id;
+      id = e.id;
     }
-  })
+  });
   return id;
 }
