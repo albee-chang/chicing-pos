@@ -1,4 +1,3 @@
-const path = "https://json-server-vercel-three.vercel.app/";
 //設定時間
 const currentTime = document.querySelector(".currentTime");
 let Today = new Date();

@@ -1,4 +1,3 @@
-const path = "https://json-server-vercel-three.vercel.app/";
 const account = document.querySelector(".account");
 const password = document.querySelector(".password");
 const login = document.querySelector(".logIn-btn");

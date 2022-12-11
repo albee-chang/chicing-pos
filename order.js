@@ -1,4 +1,3 @@
-const path = "https://json-server-vercel-three.vercel.app/";
 let dataRice = [];
 let dataSideDish = [];
 let dataSoup = [];
