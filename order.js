@@ -4,7 +4,7 @@ let dataSoup = [];
 let dataDrink = [];
 let allDish=[];
 function getAllDishList(){
-  axios.get("http://localhost:3000/products")
+  axios.get("https://json-server-vercel-three.vercel.app/products")
   .then(function(response){
       allDish=response.data;
       console.log(allDish);
@@ -215,7 +215,7 @@ sendBtn.addEventListener("click", function (e) {
   sortCartList(arrToRecord);
   console.log(dataRecordList);
   dataRecordList.forEach(item=>{
-    axios.post(`http://localhost:3000/carts?tableId=${table}`,{
+    axios.post(`https://json-server-vercel-three.vercel.app/carts?tableId=${table}`,{
       tableId: item.tableId,
 productsId:item.productsId,
 quantity: item.quantity,
