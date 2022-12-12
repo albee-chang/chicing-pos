@@ -89,11 +89,7 @@ chargeBtn.addEventListener("click", function (e) {
     .then((result) => {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire("付款完成!", "訂單已結帳", "success");
-        setTimeout(() => {
-          addBills();
-          deleteCart();
-          entry();
-        }, 2000);
+        addBills();
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
@@ -120,7 +116,11 @@ function addBills() {
 
     .then(function (response) {
       console.log(response.data);
-    });
+    deleteCart();
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 }
 
 //取得所有購物車資料
@@ -134,7 +134,7 @@ function getAllCartList() {
     })
     .catch(function (error) {
       console.log(error);
-    });
+    })
 }
 getAllCartList();
 
@@ -147,7 +147,16 @@ function deleteCart() {
   });
   console.log(cartIdRecord);
   cartIdRecord.forEach((item) => {
-    axios.delete(`${path}carts/${item}`).then(function (response) {});
+    axios.delete(`${path}carts/${item}`)
+      .then(function (response) {
+       setTimeout(() => {
+       entry();
+       }, 2000);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
   });
+  
 }
 console.log(cart);
