@@ -43,7 +43,7 @@ function renderTable() {
     }
   }
   tables.innerHTML = tableStr;
-  cart.forEach((item) => {
+  cart.find((item) => {
     if (item.tableId == "外帶") {
       takeout.innerHTML = `<li data-order class="takeoutNum takeoutBtn2" id="外帶">外帶</li>`;
     } else {
