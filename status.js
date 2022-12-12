@@ -17,7 +17,7 @@ document.querySelector(".tableId").innerHTML = tableId;
 let allDish = [];
 function getAllDishList() {
   axios
-    .get(`${path}/products`)
+    .get(`${path}products`)
     .then(function (response) {
       allDish = response.data;
       console.log(allDish);
@@ -33,7 +33,7 @@ getAllDishList();
 let cart = [];
 function getCartList() {
   axios
-    .get(`${path}/carts?tableId=${tableId}`)
+    .get(`${path}carts?tableId=${tableId}`)
     .then(function (response) {
       cart = response.data;
       console.log(cart);
