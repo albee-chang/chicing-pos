@@ -56,8 +56,8 @@
       "number": 12
     },
     {
-      "id": "外帶",
-      "number": "takeOut"
+      "id": 13,
+      "number": "外帶"
     }
   ],
   "products": [
