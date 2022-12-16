@@ -43,13 +43,16 @@ function renderTable() {
     }
   }
   tables.innerHTML = tableStr;
-  cart.find((item) => {
-    if (item.tableId == "外帶") {
+
+
+    if (cart.find(item =>item.tableId == "外帶") ){
       takeout.innerHTML = `<li data-order class="takeoutNum takeoutBtn2" id="外帶">外帶</li>`;
-    } else {
-      takeout.innerHTML = `<li data-order class="takeoutNum takeoutBtn" id="外帶">外帶</li>`;
-    }
-  });
+    } 
+    //else {
+    //   takeout.innerHTML = `<li data-order class="takeoutNum takeoutBtn" id="外帶">外帶</li>`;
+
+    // }
+
   const dataOrder = document.querySelectorAll("[data-order]");
   dataOrder.forEach((item) => {
     item.addEventListener("click", (e) => {

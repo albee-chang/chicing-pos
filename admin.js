@@ -31,31 +31,45 @@ function getUserList() {
 getUserList();
 changebtnUserId.addEventListener("click", function (e) {
   if (userid.value == "") {
-    alert("變更無效");
+    Swal.fire('請輸入文字');
     return;
   } else {
-    alert("更新成功");
-    userid.placeholder = userid.value;
-    userid.value = "";
+    Swal.fire({
+      icon: '更新成功',
+      title: '帳號已被更新',
+      showConfirmButton: true,
+      timer: 1500
+    }).then(result=>{
+      userid.placeholder = userid.value;
+      userid.value = "";
+    })
+        
   }
   axios
     .patch(`${path}users/1`, {
       account: `${userid.placeholder}`,
     })
     .then(function (response) {
-      alert("axios更新");
+      //alert("axios更新");
       getUserList();
       return;
     });
 });
 changebtnUserPassword.addEventListener("click", function (e) {
   if (userpassword.value == "") {
-    alert("變更無效");
+    Swal.fire('請輸入文字');
     return;
   } else {
-    alert("更新成功");
-    userpassword.placeholder = userpassword.value;
+    Swal.fire({
+      icon: '更新成功',
+      title: '密碼已被更新',
+      showConfirmButton: true,
+      timer: 1500
+    }).then(result=>{
+      userpassword.placeholder = userpassword.value;
     userpassword.value = "";
+    })
+    
   }
   axios
     .patch(`${path}users/1`, {

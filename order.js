@@ -151,8 +151,8 @@ const sendBtn = document.querySelector(".sendBtn");
 //帶入桌號
 const getUrlString = location.href;
 const url = new URL(getUrlString);
-let table = url.searchParams.get("desk");
-document.querySelector(".table").innerHTML = table;
+let tableId = url.searchParams.get("desk");
+document.querySelector(".table").innerHTML = tableId;
 
 let arrToRecord = [];
 function sortList(data) {
@@ -210,12 +210,17 @@ function totalRender(arrToRecord) {
 }
 
 sendBtn.addEventListener("click", function (e) {
-  alert("訂單送出成功");
-  sortCartList(arrToRecord);
-  console.log(dataRecordList);
+  Swal.fire({
+    icon: 'success',
+    title: '訂單送出成功',
+    showConfirmButton: true,
+    timer: 1500
+  }).then(result =>{
+    sortCartList(arrToRecord);
+  // console.log(dataRecordList);
   dataRecordList.forEach((item) => {
     axios
-      .post(`${path}carts?tableId=${table}`, {
+      .post(`${path}carts`, {
         tableId: item.tableId,
         productsId: item.productsId,
         quantity: item.quantity,
@@ -230,13 +235,15 @@ sendBtn.addEventListener("click", function (e) {
       });
   });
   entry();
+  })
+  
 });
 function entry() {
   window.location.href = "table.html";
 }
 const checkBillBtn = document.querySelector(".checkBillBtn");
 checkBillBtn.addEventListener("click", function (e) {
-  let tableId = table;
+  
   entryCarts(tableId);
 });
 
@@ -247,7 +254,7 @@ function entryCarts(tableId) {
 function sortCartList(arrToRecord) {
   arrToRecord.forEach((item) => {
     let obj = {};
-    obj.tableId = table;
+    obj.tableId = tableId;
     obj.productsId = fineProductsId(item);
     obj.quantity = item.num;
     obj.price = item.price;

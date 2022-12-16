@@ -20,12 +20,14 @@ let cart = [];
 let total = 0;
 function getCartList() {
   axios
-    .get(`${path}carts?tableId=${tableId}`)
+    .get(`${path}carts`)
     .then(function (response) {
       cart = response.data;
       console.log(cart);
       cart.forEach((item) => {
-        total += item.price;
+        if (item.tableId == tableId) {
+          total += item.price;
+        }
       });
       renderTotal();
     })
@@ -49,8 +51,6 @@ const reciveMoney = document.getElementById("reciveMoney");
 const backMoney = document.getElementById("backMoney");
 const clear = document.getElementById("clear");
 const panel = document.querySelector(".panel");
-console.log(backMoney);
-
 panel.addEventListener("click", function (e) {
   if (e.target.id == "clear") {
     reciveMoney.value = "";
@@ -90,37 +90,31 @@ chargeBtn.addEventListener("click", function (e) {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire("付款完成!", "訂單已結帳", "success");
         addBills();
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire("取消", "訂單尚未付款", "error");
       }
     });
 });
-function entry() {
-  window.location.href = "table.html";
-}
+
 function addBills() {
   axios
     .post(`${path}bills`, {
-      tableId: tableId,
+      tableId: `${tableId}`,
       total: money,
       time: `${new Date().getFullYear()}/${
         new Date().getMonth() + 1
       }/${new Date().getDate()} ${new Date().getHours()}:${new Date()
         .getMinutes()
         .toString()
-        .padStart(2, 0)}`,
+        .padStart(2,0)}`,
     })
-
     .then(function (response) {
-      console.log(response.data);
-    deleteCart();
+      
+      deleteCart();
     })
     .catch(function (error) {
       console.log(error);
-    })
+    });
 }
 
 //取得所有購物車資料
@@ -134,7 +128,7 @@ function getAllCartList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
+    });
 }
 getAllCartList();
 
@@ -147,16 +141,19 @@ function deleteCart() {
   });
   console.log(cartIdRecord);
   cartIdRecord.forEach((item) => {
-    axios.delete(`${path}carts/${item}`)
+    axios
+      .delete(`${path}carts/${item}`)
       .then(function (response) {
-       setTimeout(() => {
-       entry();
-       }, 2000);
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+        
+        setTimeout(() => {
+          entry();
+        }, 1500)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   });
-  
 }
-console.log(cart);
+function entry() {
+  window.location.href = "table.html";
+}

@@ -28,10 +28,23 @@ login.addEventListener("click", function (e) {
     account.value == userData.account &&
     password.value == userData.password
   ) {
-    alert("登入成功");
-    entry();
+    Swal.fire({
+      icon: 'success',
+      title: '登入成功',
+      showConfirmButton: true,
+      timer: 1500
+    }).then(result =>{
+      entry();
+    })
+    
+    
   } else {
-    alert("帳號或密碼錯誤");
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops !',
+      text: '',
+      footer: '<a href="">帳號或密碼錯誤</a>'
+    })
   }
   account.value = "";
   password.value = "";
