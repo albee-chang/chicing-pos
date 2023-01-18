@@ -1,0 +1,182 @@
+{
+  "users": [
+    {
+      "password": "1001",
+      "id": 1,
+      "account": "1001"
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "number": 1
+    },
+    {
+      "id": 2,
+      "number": 2
+    },
+    {
+      "id": 3,
+      "number": 3
+    },
+    {
+      "id": 4,
+      "number": 4
+    },
+    {
+      "id": 5,
+      "number": 5
+    },
+    {
+      "id": 6,
+      "number": 6
+    },
+    {
+      "id": 7,
+      "number": 7
+    },
+    {
+      "id": 8,
+      "number": 8
+    },
+    {
+      "id": 9,
+      "number": 9
+    },
+    {
+      "id": 10,
+      "number": 10
+    },
+    {
+      "id": 11,
+      "number": 11
+    },
+    {
+      "id": 12,
+      "number": 12
+    },
+    {
+      "id": "外帶",
+      "number": "外帶"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category": "rice",
+      "name": "招牌滷肉飯(大)",
+      "price": 50,
+      "imgUrl": "pictures/滷肉飯-01.jpg"
+    },
+    {
+      "category": "rice",
+      "name": "招牌滷肉飯(小)",
+      "price": 30,
+      "id": 2,
+      "imgUrl": "pictures/滷肉飯-01.jpg"
+    },
+    {
+      "category": "rice",
+      "name": "招牌雞絲飯",
+      "price": 50,
+      "id": 3,
+      "imgUrl": "pictures/雞絲飯_工作區域 1.jpg"
+    },
+    {
+      "category": "rice",
+      "name": "白飯",
+      "price": 20,
+      "id": 4,
+      "imgUrl": "pictures/mgg-vitchakorn-zXNC_lBBVGE-unsplash-01.jpg"
+    },
+    {
+      "category": "sideDish",
+      "name": "酥炸小魚乾",
+      "price": 30,
+      "id": 5,
+      "imgUrl": "pictures/酥炸小魚乾_工作區域 1.jpg"
+    },
+    {
+      "category": "sideDish",
+      "name": "涼拌海帶",
+      "price": 30,
+      "id": 6,
+      "imgUrl": "pictures/涼拌海帶_工作區域 1.jpg"
+    },
+    {
+      "category": "sideDish",
+      "name": "滷蛋",
+      "price": 10,
+      "id": 7,
+      "imgUrl": "pictures/egg_工作區域 1.jpg"
+    },
+    {
+      "category": "soup",
+      "name": "剝皮辣椒雞湯",
+      "price": 70,
+      "id": 8,
+      "imgUrl": "pictures/soup_工作區域 1.jpg"
+    },
+    {
+      "category": "soup",
+      "name": "香菇雞湯",
+      "price": 50,
+      "id": 9,
+      "imgUrl": "pictures/soup_工作區域 1.jpg"
+    },
+    {
+      "category": "soup",
+      "name": "蒜頭雞湯",
+      "price": 50,
+      "id": 10,
+      "imgUrl": "pictures/soup_工作區域 1.jpg"
+    },
+    {
+      "category": "drink",
+      "name": "決明子紅茶",
+      "price": 30,
+      "id": 11,
+      "imgUrl": "pictures/麥茶_工作區域 1.jpg"
+    },
+    {
+      "category": "drink",
+      "name": "決明子麥茶",
+      "price": 30,
+      "id": 12,
+      "imgUrl": "pictures/麥茶_工作區域 1.jpg"
+    },
+    {
+      "category": "drink",
+      "name": "可口可樂",
+      "price": 30,
+      "id": 13,
+      "imgUrl": "pictures/cola_工作區域 1.jpg"
+    }
+  ],
+  "carts": [
+    {
+      "tableId": "8",
+      "productsId": 13,
+      "quantity": 1,
+      "price": 30,
+      "time": "2022/12/18 12:06",
+      "id": 5
+    },
+    {
+      "tableId": "8",
+      "productsId": 12,
+      "quantity": 1,
+      "price": 30,
+      "time": "2022/12/18 12:06",
+      "id": 6
+    }
+  ],
+  "bills": [
+    {
+      "tableId": "2",
+      "total": 230,
+      "time": "2022/12/18 12:06",
+      "id": 1
+    }
+  ]
+}
