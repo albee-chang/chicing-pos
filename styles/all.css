@@ -473,8 +473,12 @@ img:hover {
   background: #ccc;
 }
 
+<<<<<<< HEAD
 th,
 td {
+=======
+th, td {
+>>>>>>> 4faced98fe5d0cffa78aac36e47c8e266c4575bd
   text-align: center;
   padding: 15px 0;
 }
@@ -485,7 +489,11 @@ th {
 }
 
 tr {
+<<<<<<< HEAD
   border-bottom: 1px solid #b9b9b9;
+=======
+  border-bottom: 1px solid #B9B9B9;
+>>>>>>> 4faced98fe5d0cffa78aac36e47c8e266c4575bd
 }
 
 .bills {
