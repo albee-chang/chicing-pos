@@ -1,2 +1,2 @@
-const path = "https://json-server-ubj7.onrender.com/";
+const path = "https://json-server-vercel-three.vercel.app/";
 //json-server --watch db.json
