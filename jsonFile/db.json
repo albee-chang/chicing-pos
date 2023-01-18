@@ -56,11 +56,7 @@
       "number": 12
     },
     {
-<<<<<<< HEAD
       "id": "外帶",
-=======
-      "id": 13,
->>>>>>> 4faced98fe5d0cffa78aac36e47c8e266c4575bd
       "number": "外帶"
     }
   ],
@@ -159,7 +155,6 @@
   ],
   "carts": [
     {
-<<<<<<< HEAD
       "tableId": "8",
       "productsId": 13,
       "quantity": 1,
@@ -174,35 +169,10 @@
       "price": 30,
       "time": "2022/12/18 12:06",
       "id": 6
-=======
-      "tableId": "1",
-      "productsId": 1,
-      "quantity": 1,
-      "price": 50,
-      "time": "2022/12/11 18:26",
-      "id": 1
-    },
-    {
-      "tableId": "1",
-      "productsId": 2,
-      "quantity": 1,
-      "price": 30,
-      "time": "2022/12/11 18:26",
-      "id": 2
-    },
-    {
-      "tableId": "1",
-      "productsId": 3,
-      "quantity": 1,
-      "price": 50,
-      "time": "2022/12/11 18:26",
-      "id": 3
->>>>>>> 4faced98fe5d0cffa78aac36e47c8e266c4575bd
     }
   ],
   "bills": [
     {
-<<<<<<< HEAD
       "tableId": "2",
       "total": 230,
       "time": "2022/12/18 12:06",
@@ -210,42 +180,3 @@
     }
   ]
 }
-=======
-      "id": 1,
-      "tableId": 2,
-      "total": 300,
-      "time": "2022/12/11 16:02"
-    },
-    {
-      "tableId": "2",
-      "total": 60,
-      "time": "2022/12/11 18:08",
-      "id": 2
-    },
-    {
-      "tableId": "4",
-      "total": 250,
-      "time": "2022/12/11 18:08",
-      "id": 3
-    },
-    {
-      "tableId": "8",
-      "total": 130,
-      "time": "2022/12/11 18:09",
-      "id": 4
-    },
-    {
-      "tableId": "5",
-      "total": 250,
-      "time": "2022/12/11 18:27",
-      "id": 5
-    },
-    {
-      "tableId": "外帶",
-      "total": 150,
-      "time": "2022/12/11 18:28",
-      "id": 6
-    }
-  ]
-}
->>>>>>> 4faced98fe5d0cffa78aac36e47c8e266c4575bd
